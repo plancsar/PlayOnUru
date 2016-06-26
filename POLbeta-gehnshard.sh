@@ -29,7 +29,7 @@ POL_Wine "$POL_System_TmpDir/gehn_shard.exe"
 
 POL_Wine_WaitExit "$TITLE"
 
-wget https://www.dropbox.com/s/trsjl0s2w1l1fbs/GehnShardDLL.zip
+wget https://github.com/plancsar/PlayOnUru/blob/master/GehnShardDLL.zip
 unzip GehnShardDLL.zip
 cd GehnShardDLL
 mv -f *.dll ~/.PlayOnLinux/wineprefix/$PREFIX/drive_c/windows/system32/
