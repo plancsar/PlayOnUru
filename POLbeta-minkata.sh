@@ -20,7 +20,7 @@ Set_Desktop "On" "1024" "768"
 # Copy the game files from the Uru Live prefix.
 
 cd
-wget https://www.dropbox.com/s/a4m9crz9f8i46ro/MinkataLauncher.zip
+wget https://github.com/plancsar/PlayOnUru/blob/master/MinkataLauncher.zip
 unzip MinkataLauncher.zip
 mkdir .PlayOnLinux/wineprefix/$PREFIX/drive_c/Program\ Files/"$TITLE"
 mv UruLauncher.exe .PlayOnLinux/wineprefix/$PREFIX/drive_c/Program\ Files/"$TITLE"/
