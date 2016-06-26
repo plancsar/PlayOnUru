@@ -7,4 +7,4 @@ A collection of PlayOnLinux/PlayOnMac scripts to install Uru Live and shards
 
 <b>The Open Cave</b>: it manages to load the login window, but fails to downloads a few files. Copying a complete folder from a Windows setup should work.
 
-<b>Gehn Shard</b>: same issues as The Open Cave.
+<b>Gehn Shard</b>: same issues as The Open Cave. Loading can be <i>very</i> slow.
