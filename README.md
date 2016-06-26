@@ -5,6 +5,6 @@ A collection of PlayOnLinux/PlayOnMac scripts to install Uru Live and shards
 
 <b>Minkata</b>: it assumes the presence of the Uru Live wineprefix, to copy files from there. Same video issues as Uru Live.
 
-<b>The Open Cave</b>: it manages to load the login window, but fails to downloads a few files.
+<b>The Open Cave</b>: it manages to load the login window, but fails to downloads a few files. Copying a complete folder from a Windows setup should work.
 
 <b>Gehn Shard</b>: same issues as The Open Cave.
