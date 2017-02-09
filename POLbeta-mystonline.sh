@@ -1,5 +1,5 @@
 #!/usr/bin/env playonlinux-bash
-# Date : 2016-06-26 11:00
+# Date : 2017-02-09 21:30 GMT
 # Wine version used : 1.7.18
 # Distribution used to test : Ubuntu 16.04 LTS 64 (VirtualBox)
 # Author : Korovev
@@ -14,8 +14,8 @@ POL_SetupWindow_Init
 POL_SetupWindow_presentation "$TITLE" "Cyan, Inc." "http://mystonline.com" "Korovev" "$PREFIX"
 POL_Wine_SelectPrefix "$PREFIX"
 POL_System_SetArch "x86"
-POL_Wine_PrefixCreate "1.5.31"
-Set_Desktop "On" "1024" "768"
+POL_Wine_PrefixCreate "1.7.18"
+#Set_Desktop "On" "1024" "768"
 
 # Download & Install the game.
 POL_System_TmpCreate "$PREFIX"
