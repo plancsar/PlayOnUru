@@ -15,7 +15,7 @@ POL_SetupWindow_presentation "$TITLE" "Cyan, Inc." "http://mystonline.com" "Koro
 POL_Wine_SelectPrefix "$PREFIX"
 POL_System_SetArch "x86"
 POL_Wine_PrefixCreate "1.7.18"
-#Set_Desktop "On" "1024" "768"
+Set_Desktop "On" "1024" "768"
 
 # Download & Install the game.
 POL_System_TmpCreate "$PREFIX"
