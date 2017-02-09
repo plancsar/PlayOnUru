@@ -15,7 +15,7 @@ POL_SetupWindow_presentation "$TITLE" "OpenUru.org" "http://openuru.org/" "Korov
 POL_Wine_SelectPrefix "$PREFIX"
 POL_System_SetArch "x86"
 POL_Wine_PrefixCreate "1.7.18"
-#Set_Desktop "On" "1024" "768"
+Set_Desktop "On" "1024" "768"
 
 # Copy the game files from the Uru Live prefix.
 
