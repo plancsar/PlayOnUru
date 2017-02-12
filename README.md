@@ -7,4 +7,4 @@ A collection of PlayOnLinux/PlayOnMac scripts to install Uru Live and shards.
 
 <b>Gehn Shard</b>: it manages to load the login window, but fails to downloads a few files. Using the "/image" argument from <i>Configure</i> once should fix that. The script tries to copy the data files from the Uru Live prefix. Loading can be slow.
 
-<b>The Open Cave</b>: same issues as Gehn, but the Installer seems to hang up; in that case, quit POL, relaunch it, then create the link manually from <i>Configure</i> > <i>Make a new shortcut from this virtual drive</i>.
+<b>The Open Cave</b>: same issues as Gehn.
