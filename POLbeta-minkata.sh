@@ -1,7 +1,7 @@
 #!/usr/bin/env playonlinux-bash
-# Date: 2017-02-12 13:30 GMT
-# Wine version used: 1.7.18
-# Distribution used to test: Ubuntu 16.04 LTS 64 (VirtualBox)
+# Date: 2018-01-30 19:50 GMT
+# Wine version used: 3.0
+# Distribution used to test: Lubuntu 17.10 64 (VirtualBox)
 # Author: Korovev
 
 [ "$PLAYONLINUX" = "" ] && exit 0
@@ -15,23 +15,54 @@ POL_SetupWindow_presentation "$TITLE" "OpenUru.org" "http://openuru.org/" "Korov
 
 POL_Wine_SelectPrefix "$PREFIX"
 POL_System_SetArch "x86"
-POL_Wine_PrefixCreate "1.7.18"
-Set_Desktop "On" "1024" "768"
+POL_Wine_PrefixCreate "3.0"
+#Set_Desktop "On" "1024" "768"
 
-# Copy the game files from the Uru Live prefix and adding Minkata's Launcher
-POL_Download "https://github.com/plancsar/PlayOnUru/raw/master/MinkataLauncher.zip"
-unzip MinkataLauncher.zip
-mkdir $HOME/.PlayOnLinux/wineprefix/$PREFIX/drive_c/Program\ Files/"$TITLE"
-mv UruLauncher.exe $HOME/.PlayOnLinux/wineprefix/$PREFIX/drive_c/Program\ Files/"$TITLE"/
+POL_System_TmpCreate "$PREFIX"
+cd "$POL_System_TmpDir"
 
-cp -r $HOME/.PlayOnLinux/wineprefix/mystonline/drive_c/Program\ Files/Uru\ Live/dat $HOME/.PlayOnLinux/wineprefix/mystonline/drive_c/Program\ Files/Uru\ Live/sfx $HOME/.PlayOnLinux/wineprefix/mystonline/drive_c/Program\ Files/Uru\ Live/avi $HOME/.PlayOnLinux/wineprefix/$PREFIX/drive_c/Program\ Files/"$TITLE"/
 
 # Installing components
 POL_Call POL_Install_vcrun6
 POL_Call POL_Install_physx
 
+
+# If MO:ULa is already installed in $MOULAPATH, copy the datafiles from there
+if [ -d $HOME/.PlayOnLinux ]; then
+    MOULAPATH="$HOME/.PlayOnLinux/wineprefix/mystonline/drive_c/Program Files/Uru Live"
+    SHARDPATH="$HOME/.PlayOnLinux/wineprefix/$PREFIX/drive_c/Program Files/Minkata"
+    RENAMPATH="$HOME/.PlayOnLinux/wineprefix/$PREFIX/drive_c/Program Files/Uru Live"
+
+elif [ -d $HOME/Library/PlayOnMac ]; then
+    MOULAPATH="$HOME/Library/PlayOnMac/wineprefix/mystonline/drive_c/Program Files/Uru Live"
+    SHARDPATH="$HOME/Library/PlayOnMac/wineprefix/$PREFIX/drive_c/Program Files/Minkata"
+    RENAMPATH="$HOME/Library/PlayOnMac/wineprefix/$PREFIX/drive_c/Program Files/Uru Live"
+else
+    exit
+fi
+
+if [ "$(POL_Wine_PrefixExists 'mystonline')" = "True" ]; then
+    mkdir "$SHARDPATH"
+    cp -r "$MOULAPATH"/dat "$MOULAPATH"/sfx "$MOULAPATH"/avi "$SHARDPATH"/
+
+# If MO:ULa is not installed, download and launch the installer
+else
+    POL_Download "http://account.mystonline.com/download/MOULInstaller.exe"
+    POL_Wine MOULInstaller.exe
+    POL_Wine_WaitExit "$TITLE"
+
+    #Rename the Uru Live folder to "Minkata", to let the installer recognize it
+    mv "$RENAMPATH" "$SHARDPATH"
+fi
+
+
+# Copy the game files from the Uru Live prefix and adding Minkata's Launcher
+cd "$SHARDPATH"/
+rm UruLauncher.exe
+POL_Download "http://foundry.openuru.org/jenkins/job/CWE-ou-minkata-Compile/lastSuccessfulBuild/BuildType=External,Platform=Windows2k3Builder/artifact/MOULOpenSourceClientPlugin/Plasma20/MsDevProjects/Plasma/Apps/plUruLauncher/Release/UruLauncher.exe"
+
 # Cleanup
+POL_System_TmpDelete
 POL_Shortcut "UruLauncher.exe" "Minkata"
 POL_SetupWindow_Close
 exit
-
