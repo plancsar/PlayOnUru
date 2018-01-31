@@ -25,6 +25,7 @@ cd "$POL_System_TmpDir"
 # Installing components
 POL_Call POL_Install_d3dx10
 POL_Call POL_Install_vcrun2013
+POL_Call POL_Install_crypt32
 POL_Call POL_Install_physx
 
 
@@ -40,8 +41,6 @@ elif [ -d $HOME/Library/PlayOnMac ]; then
     SHARDPATH="$HOME/Library/PlayOnMac/wineprefix/$PREFIX/drive_c/Program Files/Gehn Shard"
     RENAMPATH="$HOME/Library/PlayOnMac/wineprefix/$PREFIX/drive_c/Program Files/Uru Live"
     WPATH="$HOME/Library/PlayOnMac/wineprefix/$PREFIX"
-else
-    exit
 fi
 
 
@@ -57,6 +56,7 @@ fi
 
 if [ "$(POL_Wine_PrefixExists 'mystonline')" = "True" ]; then
     mkdir "$SHARDPATH"
+    POL_SetupWindow_wait "Copying data from the Myst Online prefix..." "$TITLE"
     cp -r "$MOULAPATH"/dat "$MOULAPATH"/sfx "$MOULAPATH"/avi "$SHARDPATH"/
 
 # If MO:ULa is not installed, download and launch the installer
@@ -65,8 +65,8 @@ if [ "$(POL_Wine_PrefixExists 'mystonline')" = "True" ]; then
 #     POL_Wine MOULInstaller.exe
 #     POL_Wine_WaitExit "$TITLE"
 
-	#Rename the Uru Live folder to "Gehn Shard", to let the installer recognize it
-# 	mv "$RENAMPATH" "$SHARDPATH"
+#     Rename the Uru Live folder to "Gehn Shard", to let the installer recognize it
+#     mv "$RENAMPATH" "$SHARDPATH"
 fi
 
 
