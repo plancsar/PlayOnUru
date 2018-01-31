@@ -37,12 +37,11 @@ elif [ -d $HOME/Library/PlayOnMac ]; then
     MOULAPATH="$HOME/Library/PlayOnMac/wineprefix/mystonline/drive_c/Program Files/Uru Live"
     SHARDPATH="$HOME/Library/PlayOnMac/wineprefix/$PREFIX/drive_c/Program Files/TOC-Moul"
     RENAMPATH="$HOME/Library/PlayOnMac/wineprefix/$PREFIX/drive_c/Program Files/Uru Live"
-else
-    exit
 fi
 
 if [ "$(POL_Wine_PrefixExists 'mystonline')" = "True" ]; then
     mkdir "$SHARDPATH"
+    POL_SetupWindow_wait "Copying data from the Myst Online prefix..." "$TITLE"
     cp -r "$MOULAPATH"/dat "$MOULAPATH"/sfx "$MOULAPATH"/avi "$SHARDPATH"/
 
 # If MO:ULa is not installed, download and launch the installer
