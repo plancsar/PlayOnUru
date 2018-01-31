@@ -46,13 +46,13 @@ if [ "$(POL_Wine_PrefixExists 'mystonline')" = "True" ]; then
     cp -r "$MOULAPATH"/dat "$MOULAPATH"/sfx "$MOULAPATH"/avi "$SHARDPATH"/
 
 # If MO:ULa is not installed, download and launch the installer
-else
-    POL_Download "http://account.mystonline.com/download/MOULInstaller.exe"
-    POL_Wine MOULInstaller.exe
-    POL_Wine_WaitExit "$TITLE"
+# else
+#     POL_Download "http://account.mystonline.com/download/MOULInstaller.exe"
+#     POL_Wine MOULInstaller.exe
+#     POL_Wine_WaitExit "$TITLE"
 
-	#Rename the Uru Live folder to "TOC-Moul", to let the installer recognize it
-	mv "$RENAMPATH" "$SHARDPATH"
+#     Rename the Uru Live folder to "TOC-Moul", to let the installer recognize it
+#     mv "$RENAMPATH" "$SHARDPATH"
 fi
 
 
