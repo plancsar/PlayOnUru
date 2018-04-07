@@ -30,17 +30,16 @@ POL_Call POL_Install_physx
 
 
 # If MO:ULa is already installed in $MOULAPATH, copy the datafiles from there
-if [ -d $HOME/.PlayOnLinux ]; then
-    MOULAPATH="$HOME/.PlayOnLinux/wineprefix/mystonline/drive_c/Program Files/Uru Live"
-    SHARDPATH="$HOME/.PlayOnLinux/wineprefix/$PREFIX/drive_c/Program Files/Gehn Shard"
-    RENAMPATH="$HOME/.PlayOnLinux/wineprefix/$PREFIX/drive_c/Program Files/Uru Live"
-    WPATH="$HOME/.PlayOnLinux/wineprefix/$PREFIX"
-
-elif [ -d $HOME/Library/PlayOnMac ]; then
+if [ -d $HOME/Library/PlayOnMac ]; then
     MOULAPATH="$HOME/Library/PlayOnMac/wineprefix/mystonline/drive_c/Program Files/Uru Live"
     SHARDPATH="$HOME/Library/PlayOnMac/wineprefix/$PREFIX/drive_c/Program Files/Gehn Shard"
     RENAMPATH="$HOME/Library/PlayOnMac/wineprefix/$PREFIX/drive_c/Program Files/Uru Live"
     WPATH="$HOME/Library/PlayOnMac/wineprefix/$PREFIX"
+elif [ -d $HOME/.PlayOnLinux ]; then
+    MOULAPATH="$HOME/.PlayOnLinux/wineprefix/mystonline/drive_c/Program Files/Uru Live"
+    SHARDPATH="$HOME/.PlayOnLinux/wineprefix/$PREFIX/drive_c/Program Files/Gehn Shard"
+    RENAMPATH="$HOME/.PlayOnLinux/wineprefix/$PREFIX/drive_c/Program Files/Uru Live"
+    WPATH="$HOME/.PlayOnLinux/wineprefix/$PREFIX"
 fi
 
 
