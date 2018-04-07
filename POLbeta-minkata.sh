@@ -36,8 +36,6 @@ elif [ -d $HOME/.PlayOnLinux ]; then
     MOULAPATH="$HOME/.PlayOnLinux/wineprefix/mystonline/drive_c/Program Files/Uru Live"
     SHARDPATH="$HOME/.PlayOnLinux/wineprefix/$PREFIX/drive_c/Program Files/Minkata"
     RENAMPATH="$HOME/.PlayOnLinux/wineprefix/$PREFIX/drive_c/Program Files/Uru Live"
-else
-    exit
 fi
 
 if [ "$(POL_Wine_PrefixExists 'mystonline')" = "True" ]; then
