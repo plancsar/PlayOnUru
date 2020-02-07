@@ -1,5 +1,5 @@
 # PlayOnUru
-A collection of PlayOnLinux/PlayOnMac scripts to install Uru Live and shards.
+A collection of PlayOnLinux/PlayOnMac scripts to install Uru Live and shards. You will need to run them from inside the Launcher: <code>Tools</code> menu > <code>Run a local script</code>, then select the script you want to run. You will get a warning that the signature is not valid: you can ignore it, this is normal for custom script.
 
 <b>Minkata</b>: the script tries to copy the data files from the Uru Live prefix, if it exists, otherwise it installs Uru Live, then Minkata on top of it.
 
