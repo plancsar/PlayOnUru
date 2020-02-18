@@ -3,7 +3,7 @@
 # It assumes a recent version of Wine (from WineHQ) and winetricks are already installed.
 # -- Korov'ev, 2020-02-18
 
-INSTALLDIR="$HOME/uru_installers"
+INSTALLDIR="$HOME/uru-installers"
 
 mkdir -p "$INSTALLDIR" && cd "$INSTALLDIR"
 
@@ -115,7 +115,7 @@ When the installation is done, press any key to continue.
 # ================= aliases =================
 
 while true; do
-    read -p 'Do you wish to add the "urulive", "gehnshard", "opencave" and "minkata" alieses to .bashrc ?' yn
+    read -p 'Do you wish to add the "urulive", "gehnshard", "opencave" and "minkata" aliases to .bashrc ? [y/n]' yn
     case $yn in
         [Yy]* )
             echo 'alias urulive="WINEPREFIX=$HOME/uru-live wine start /unix $HOME/uru-live/drive_c/Program Files/Uru Live/UruLauncher.exe"' >> $HOME/.bashrc
