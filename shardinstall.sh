@@ -120,7 +120,9 @@ while true; do
         [Yy]* )
             echo 'alias urulive="WINEPREFIX=$HOME/uru-live wine start /unix $HOME/uru-live/drive_c/Program\ Files/Uru\ Live/UruLauncher.exe"' >> $HOME/.bashrc
             echo 'alias gehnshard="WINEPREFIX=$HOME/uru-gehn wine start /unix $HOME/uru-gehn/drive_c/Program\ Files/Gehn\ Shard/UruLauncher.exe"' >> $HOME/.bashrc
+            echo 'alias gehnshard-repair="WINEPREFIX=$HOME/uru-gehn wine start /unix $HOME/uru-gehn/drive_c/Program\ Files/Gehn\ Shard/UruLauncher.exe /ServerIni=repair.ini /Repair"' >> $HOME/.bashrc
             echo 'alias opencave="WINEPREFIX=$HOME/uru-toc wine start /unix $HOME/uru-toc/drive_c/Program\ Files/TOC-Moul/UruLauncher.exe"' >> $HOME/.bashrc
+            echo 'alias opencave-repair="WINEPREFIX=$HOME/uru-toc wine start /unix $HOME/uru-toc/drive_c/Program\ Files/TOC-Moul/UruLauncher.exe /ServerIni=repair.ini /Repair"' >> $HOME/.bashrc
             echo 'alias minkata="WINEPREFIX=$HOME/uru-minkata wine start /unix $HOME/uru-minkata/drive_c/Program\ Files/Minkata/UruLauncher.exe"' >> $HOME/.bashrc
             break;;
         [Nn]* ) break;;
