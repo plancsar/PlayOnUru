@@ -6,11 +6,11 @@
 SHARDPREFIX=$HOME/uru-live
 
 if [ ! -f "MOULInstaller.exe" ]; then
-	wget http://account.mystonline.com/download/MOULInstaller.exe
+	curl -L -O http://account.mystonline.com/download/MOULInstaller.exe
 	chmod 755 MOULInstaller.exe
 fi
 
-WINEARCH=win32 WINEPREFIX=$SHARDPREFIX winetricks vcrun6 physx
+WINEARCH=win32 WINEPREFIX=$SHARDPREFIX winetricks vcrun6
 WINEPREFIX=$SHARDPREFIX wine start /unix $HOME/MOULInstaller.exe
 
 echo 'alias urulive="WINEPREFIX=$HOME/uru-live wine start /unix $HOME/uru-live/drive_c/Program\ Files/Uru\ Live/UruLauncher.exe"' >> $HOME/.bashrc
@@ -30,7 +30,7 @@ read -n 1 -s -r -p "Press any key to continue"
 SHARDPREFIX=$HOME/uru-gehn
 
 if [ ! -f "gehn_shard.exe" ]; then
-	wget https://guildofwriters.org/cwe/gehn_shard.exe
+	curl -L -O https://guildofwriters.org/cwe/gehn_shard.exe
 	chmod 755 gehn_shard.exe
 fi
 
@@ -52,7 +52,7 @@ read -n 1 -s -r -p "Press any key to continue"
 SHARDPREFIX=$HOME/uru-toc
 
 if [ ! -f "TOC-Moul.exe" ]; then
-	wget http://other.the-open-cave.net/installer/TOC-Moul.exe
+	curl -L -O http://other.the-open-cave.net/installer/TOC-Moul.exe
 	chmod 755 TOC-Moul.exe
 fi
 
@@ -70,14 +70,14 @@ echo 'alias opencave="WINEPREFIX=$HOME/uru-toc wine start /unix $HOME/uru-toc/dr
 read -n 1 -s -r -p "Press any key to continue"
 SHARDPREFIX=$HOME/uru-minkata
 
-WINEARCH=win32 WINEPREFIX=$SHARDPREFIX winetricks vcrun6 physx
+WINEARCH=win32 WINEPREFIX=$SHARDPREFIX winetricks vcrun6
 
 cp -r $HOME/uru-live/drive_c/Program\ Files/Uru\ Live $SHARDPREFIX/drive_c/Program\ Files/
 mv $SHARDPREFIX/drive_c/Program\ Files/Uru\ Live $SHARDPREFIX/drive_c/Program\ Files/Minkata
 
 cd $SHARDPREFIX/drive_c/Program\ Files/Minkata/
 rm UruLauncher.exe
-wget http://foundry.openuru.org/jenkins/job/CWE-ou-minkata-Compile/lastSuccessfulBuild/BuildType=External,Platform=Windows2k3Builder/artifact/MOULOpenSourceClientPlugin/Plasma20/MsDevProjects/Plasma/Apps/plUruLauncher/Release/UruLauncher.exe
+curl -L -O http://foundry.openuru.org/jenkins/job/CWE-ou-minkata-Compile/lastSuccessfulBuild/BuildType=External,Platform=Windows2k3Builder/artifact/MOULOpenSourceClientPlugin/Plasma20/MsDevProjects/Plasma/Apps/plUruLauncher/Release/UruLauncher.exe
 chmod 755 UruLauncher.exe
 
 WINEPREFIX=$SHARDPREFIX wine start /unix $HOME/UruLauncher.exe
