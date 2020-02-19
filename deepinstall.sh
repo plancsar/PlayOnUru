@@ -12,14 +12,14 @@ mkdir -p "$INSTALLDIR" && cd "$INSTALLDIR"
 echo "Installing Uru: Complete Chronicles..."
 SHARDPREFIX="$HOME/uru-deepisland"
 
-if [ ! -f "setup_uru_cc_2.0.0.5.exe" ]; then
-    echo "Please put the GOG Uru:CC installer into the uru-installers folder!"
-	exit
-fi
-chmod 755 $INSTALLDIR/setup_uru_cc_2.0.0.5.exe
+echo "Where is the GOG Uru:CC installer?"
+read GOGPATH
+GOGPATH=$(readlink -f $GOGPATH)
+
+chmod 755 $GOGPATH
 
 WINEARCH=win32 WINEPREFIX="$SHARDPREFIX" winetricks vcrun6 >> $HOME/uru-wine.log 2>&1
-WINEPREFIX="$SHARDPREFIX" wine start /unix "$INSTALLDIR/setup_uru_cc_2.0.0.5.exe" >> $HOME/uru-wine.log 2>&1
+WINEPREFIX="$SHARDPREFIX" wine start /unix "$GOGPATH" >> $HOME/uru-wine.log 2>&1
 
 read -n 1 -s -r -p "
 Advance the installer with the mouse, the keyboard may be intercepted by the script.
