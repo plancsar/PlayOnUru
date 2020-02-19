@@ -48,7 +48,7 @@ while true; do
     read -p 'Do you wish to add the "drizzle" and "deepisland" aliases to .bashrc ? [y/n]' yn
     case $yn in
         [Yy]* )
-            echo 'alias drizzle="cd $HOME/uru-deepisland/drive_c/Program Files/Deep Island; java -jar $HOME/Drizzle31.jar"' >> $HOME/.bashrc
+            echo 'alias drizzle="cd $HOME/uru-deepisland/drive_c/Program\ Files/Deep\ Island; java -jar Drizzle31.jar"' >> $HOME/.bashrc
             echo 'alias deepisland="WINEPREFIX=$HOME/uru-deepisland wine start /unix $HOME/uru-deepisland/drive_c/Program\ Files/Deep\ Island/Uru.exe"' >> $HOME/.bashrc
             break;;
         [Nn]* ) break;;
