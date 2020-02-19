@@ -13,7 +13,7 @@ echo "Installing Uru: Complete Chronicles..."
 SHARDPREFIX="$HOME/uru-deepisland"
 
 echo "Where is the GOG Uru:CC installer?"
-read GOGPATH
+read -e GOGPATH
 GOGPATH=$(readlink -f $GOGPATH)
 
 chmod 755 $GOGPATH
