@@ -8,6 +8,12 @@ if [[ $lang == "5" ]]; then
     echo "Sorry! Not available. Continuing in English."
 fi
 
+if [[ "$OSTYPE" == "darwin"* ]]; then
+    $BASHFILE = ".profile"
+else
+    $BASHFILE = ".bashrc"
+fi
+
 while true; do
     shard="none"
     read -p 'Which shard do you wish to install? [1 MOUL, 2 Gehn, 3 TOC, 4 Minkata, 5 exit] ' shard
@@ -57,9 +63,9 @@ while true; do
             echo "When the installation and updating is done, press any key to continue."
             read -n 1 -s -r
 
-            read -p 'Do you wish to add the "urulive" alias to .bashrc ? [y/n] ' yn
+            read -p "Do you wish to add the 'urulive' alias to $BASHFILE ? [y/n] " yn
             if [[ $yn == "y" || $yn == "Y" ]]; then
-                echo 'alias urulive="WINEPREFIX=$HOME/uru-live wine start /unix $HOME/uru-live/drive_c/Program\ Files/Uru\ Live/UruLauncher.exe"' >> $HOME/.bashrc
+                echo 'alias urulive="WINEPREFIX=$HOME/uru-live wine start /unix $HOME/uru-live/drive_c/Program\ Files/Uru\ Live/UruLauncher.exe"' >> $HOME/$BASHFILE
             fi
             ;;
         2)
@@ -101,10 +107,10 @@ while true; do
             echo "When the installation and updating is done, press any key to continue."
             read -n 1 -s -r
 
-            read -p 'Do you wish to add the "gehnshard" and "gehnshard-repair" aliases to .bashrc ? [y/n] ' yn
+            read -p "Do you wish to add the 'gehnshard' and 'gehnshard-repair' aliases to $BASHFILE ? [y/n] " yn
             if [[ $yn == "y" || $yn == "Y" ]]; then
-                echo 'alias gehnshard="WINEPREFIX=$HOME/uru-gehn wine start /unix $HOME/uru-gehn/drive_c/Program\ Files/Gehn\ Shard/UruLauncher.exe"' >> $HOME/.bashrc
-                echo 'alias gehnshard-repair="WINEPREFIX=$HOME/uru-gehn wine start /unix $HOME/uru-gehn/drive_c/Program\ Files/Gehn\ Shard/UruLauncher.exe /ServerIni=repair.ini /Repair"' >> $HOME/.bashrc
+                echo 'alias gehnshard="WINEPREFIX=$HOME/uru-gehn wine start /unix $HOME/uru-gehn/drive_c/Program\ Files/Gehn\ Shard/UruLauncher.exe"' >> $HOME/$BASHFILE
+                echo 'alias gehnshard-repair="WINEPREFIX=$HOME/uru-gehn wine start /unix $HOME/uru-gehn/drive_c/Program\ Files/Gehn\ Shard/UruLauncher.exe /ServerIni=repair.ini /Repair"' >> $HOME/$BASHFILE
             fi
             ;;
         3)
@@ -146,10 +152,10 @@ while true; do
             echo "When the installation and updating is done, press any key to continue."
             read -n 1 -s -r
 
-            read -p 'Do you wish to add the "opencave" and "opencave-repair" aliases to .bashrc ? [y/n] ' yn
+            read -p "Do you wish to add the 'opencave' and 'opencave-repair' aliases to $BASHFILE ? [y/n] " yn
             if [[ $yn == "y" || $yn == "Y" ]]; then
-                echo 'alias opencave="WINEPREFIX=$HOME/uru-toc wine start /unix $HOME/uru-toc/drive_c/Program\ Files/TOC-Moul/UruLauncher.exe"' >> $HOME/.bashrc
-                echo 'alias opencave-repair="WINEPREFIX=$HOME/uru-toc wine start /unix $HOME/uru-toc/drive_c/Program\ Files/TOC-Moul/UruLauncher.exe /ServerIni=repair.ini /Repair"' >> $HOME/.bashrc
+                echo 'alias opencave="WINEPREFIX=$HOME/uru-toc wine start /unix $HOME/uru-toc/drive_c/Program\ Files/TOC-Moul/UruLauncher.exe"' >> $HOME/$BASHFILE
+                echo 'alias opencave-repair="WINEPREFIX=$HOME/uru-toc wine start /unix $HOME/uru-toc/drive_c/Program\ Files/TOC-Moul/UruLauncher.exe /ServerIni=repair.ini /Repair"' >> $HOME/$BASHFILE
             fi
             ;;
         4)
@@ -215,9 +221,9 @@ while true; do
             echo "When the patching is done, press any key to continue."
             read -n 1 -s -r
 
-            read -p 'Do you wish to add the "minkata" alias to .bashrc ? [y/n] ' yn
+            read -p "Do you wish to add the 'minkata' alias to $BASHFILE ? [y/n] " yn
             if [[ $yn == "y" || $yn == "Y" ]]; then
-                echo 'alias minkata="WINEPREFIX=$HOME/uru-minkata wine start /unix $HOME/uru-minkata/drive_c/Program\ Files/Minkata/UruLauncher.exe"' >> $HOME/.bashrc
+                echo 'alias minkata="WINEPREFIX=$HOME/uru-minkata wine start /unix $HOME/uru-minkata/drive_c/Program\ Files/Minkata/UruLauncher.exe"' >> $HOME/$BASHFILE
             fi
             ;;
         5)
