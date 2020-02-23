@@ -1,7 +1,7 @@
 #!/usr/bin/env playonlinux-bash
-# Date: 2018-01-30 19:50 GMT
+# Date: 2020-02-23
 # Wine version used: 3.0
-# Distribution used to test: Lubuntu 17.10 64 (VirtualBox)
+# Distribution used to test: Lubuntu 18.04 LTS 64bit (VirtualBox)
 # Author: Korovev
 
 [ "$PLAYONLINUX" = "" ] && exit 0
@@ -21,11 +21,11 @@ POL_Wine_PrefixCreate "3.0"
 POL_System_TmpCreate "$PREFIX"
 cd "$POL_System_TmpDir"
 
-
 # Installing components
 POL_Call POL_Install_vcrun6
-POL_Call POL_Install_physx
-
+POL_Download "https://raw.githubusercontent.com/plancsar/PlayOnUru/master/PhysX_Setup.exe"
+POL_Wine PhysX_Setup.exe
+POL_Wine_WaitExit "$TITLE"
 
 # If MO:ULa is already installed in $MOULAPATH, copy the datafiles from there
 if [ -d $HOME/Library/PlayOnMac ]; then
@@ -52,7 +52,6 @@ else
     #Rename the Uru Live folder to "Minkata", to let the installer recognize it
     mv "$RENAMPATH" "$SHARDPATH"
 fi
-
 
 # Copy the game files from the Uru Live prefix and adding Minkata's Launcher
 cd "$SHARDPATH"/
