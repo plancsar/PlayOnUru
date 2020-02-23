@@ -1,7 +1,7 @@
 #!/usr/bin/env playonlinux-bash
-# Date: 2018-01-30 19:50 GMT
+# Date: 2020-02-23
 # Wine version used: 3.0
-# Distribution used to test: Lubuntu 17.10 64 (VirtualBox)
+# Distribution used to test: Lubuntu 18.04 LTS 64bit (VirtualBox)
 # Author: Korovev
 
 [ "$PLAYONLINUX" = "" ] && exit 0
@@ -21,13 +21,10 @@ POL_Wine_PrefixCreate "3.0"
 POL_System_TmpCreate "$PREFIX"
 cd "$POL_System_TmpDir"
 
-
 # Installing components
 POL_Call POL_Install_d3dx10
-POL_Call POL_Install_vcrun2013
-POL_Call POL_Install_crypt32
-POL_Call POL_Install_physx
-
+# POL_Call POL_Install_vcrun2015
+#POL_Call POL_Install_crypt32
 
 # If MO:ULa is already installed in $MOULAPATH, copy the datafiles from there
 if [ -d $HOME/Library/PlayOnMac ]; then
@@ -42,32 +39,19 @@ elif [ -d $HOME/.PlayOnLinux ]; then
     WPATH="$HOME/.PlayOnLinux/wineprefix/$PREFIX"
 fi
 
-
 # Installing vcrun2015 with Winetricks, since it's missing from POL's components
-#POL_Download "https://raw.githubusercontent.com/winetricks/winetricks/master/src/winetricks"
-#chmod +x winetricks
-#WINEPREFIX="$WPATH" winetricks vcrun2015
+POL_Download "https://raw.githubusercontent.com/winetricks/winetricks/master/src/winetricks"
+chmod +x winetricks
+WINEPREFIX="$WPATH" winetricks vcrun2015
 
 # Setting the virtualized system to Win 8
 # Should be done now, as vcrun2015 will reset the system to Win XP
 # Set_OS "win8"
 
-
 if [ "$(POL_Wine_PrefixExists 'mystonline')" = "True" ]; then
     mkdir "$SHARDPATH"
     POL_SetupWindow_wait "Copying data from the Myst Online prefix..." "$TITLE"
     cp -r "$MOULAPATH"/dat "$MOULAPATH"/sfx "$MOULAPATH"/avi "$SHARDPATH"/
-
-# If MO:ULa is not installed, download and launch the installer
-# else
-#     POL_Download "http://account.mystonline.com/download/MOULInstaller.exe"
-#     POL_Wine MOULInstaller.exe
-#     POL_Wine_WaitExit "$TITLE"
-
-#     Rename the Uru Live folder to "Gehn Shard", to let the installer recognize it
-#     mv "$RENAMPATH" "$SHARDPATH"
-fi
-
 
 # Installing the shard
 POL_Download "https://guildofwriters.org/cwe/gehn_shard.exe"
