@@ -24,19 +24,14 @@ cd "$POL_System_TmpDir"
 
 # Installing components
 POL_Call POL_Install_vcrun6
-POL_Call POL_Install_physx
 
 
 # Ask for the location of the GOG installer and launch it
-POL_SetupWindow_browse "Please select the GOG installer." "$TITLE"
+POL_SetupWindow_browse "Please select the Windows GOG installer." "$TITLE"
 POL_Wine $APP_ANSWER
 POL_Wine_WaitExit "$TITLE"
 
-if [ -d $HOME/.PlayOnLinux ]; then
-    SHARDPATH="$HOME/.PlayOnLinux/wineprefix/$PREFIX/drive_c/GOG Games/Myst Uru Complete Chronicles"
-elif [ -d $HOME/Library/PlayOnMac ]; then
-    SHARDPATH="$HOME/Library/PlayOnMac/wineprefix/$PREFIX/drive_c/GOG Games/Myst Uru Complete Chronicles"
-fi
+SHARDPATH="$POL_USER_ROOT/wineprefix/$PREFIX/drive_c/GOG Games/Myst Uru Complete Chronicles"
 
 # Patch the game for use with Deep Island
 cd "$SHARDPATH"/
@@ -50,4 +45,3 @@ POL_System_TmpDelete
 POL_Shortcut "Uru.exe" "$TITLE"
 POL_SetupWindow_Close
 exit
-
