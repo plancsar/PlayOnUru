@@ -24,20 +24,16 @@ cd "$POL_System_TmpDir"
 POL_Call POL_Install_vcrun2013
 
 # If MO:ULa is already installed in $MOULAPATH, copy the datafiles from there
-if [ -d $HOME/Library/PlayOnMac ]; then
-    MOULAPATH="$HOME/Library/PlayOnMac/wineprefix/mystonline/drive_c/Program Files/Uru Live"
-    SHARDPATH="$HOME/Library/PlayOnMac/wineprefix/$PREFIX/drive_c/Program Files/TOC-Moul"
-    RENAMPATH="$HOME/Library/PlayOnMac/wineprefix/$PREFIX/drive_c/Program Files/Uru Live"
-elif [ -d $HOME/.PlayOnLinux ]; then
-    MOULAPATH="$HOME/.PlayOnLinux/wineprefix/mystonline/drive_c/Program Files/Uru Live"
-    SHARDPATH="$HOME/.PlayOnLinux/wineprefix/$PREFIX/drive_c/Program Files/TOC-Moul"
-    RENAMPATH="$HOME/.PlayOnLinux/wineprefix/$PREFIX/drive_c/Program Files/Uru Live"
-fi
+MOULAPATH="$POL_USER_ROOT/wineprefix/mystonline/drive_c/Program Files/Uru Live"
+WPATH="$POL_USER_ROOT/wineprefix/$PREFIX"
+SHARDPATH="$WPATH/drive_c/Program Files/TOC-Moul"
+RENAMPATH="$WPATH/drive_c/Program Files/Uru Live"
 
 if [ "$(POL_Wine_PrefixExists 'mystonline')" = "True" ]; then
     mkdir "$SHARDPATH"
     POL_SetupWindow_wait "Copying data from the Myst Online prefix..." "$TITLE"
     cp -r "$MOULAPATH"/dat "$MOULAPATH"/sfx "$MOULAPATH"/avi "$SHARDPATH"/
+fi
 
 # Install the game
 POL_Download "http://other.the-open-cave.net/installer/TOC-Moul.exe"
