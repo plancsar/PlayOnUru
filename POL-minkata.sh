@@ -28,15 +28,10 @@ POL_Wine PhysX_Setup.exe
 POL_Wine_WaitExit "$TITLE"
 
 # If MO:ULa is already installed in $MOULAPATH, copy the datafiles from there
-if [ -d $HOME/Library/PlayOnMac ]; then
-    MOULAPATH="$HOME/Library/PlayOnMac/wineprefix/mystonline/drive_c/Program Files/Uru Live"
-    SHARDPATH="$HOME/Library/PlayOnMac/wineprefix/$PREFIX/drive_c/Program Files/Minkata"
-    RENAMPATH="$HOME/Library/PlayOnMac/wineprefix/$PREFIX/drive_c/Program Files/Uru Live"
-elif [ -d $HOME/.PlayOnLinux ]; then
-    MOULAPATH="$HOME/.PlayOnLinux/wineprefix/mystonline/drive_c/Program Files/Uru Live"
-    SHARDPATH="$HOME/.PlayOnLinux/wineprefix/$PREFIX/drive_c/Program Files/Minkata"
-    RENAMPATH="$HOME/.PlayOnLinux/wineprefix/$PREFIX/drive_c/Program Files/Uru Live"
-fi
+MOULAPATH="$POL_USER_ROOT/wineprefix/mystonline/drive_c/Program Files/Uru Live"
+WPATH="$POL_USER_ROOT/wineprefix/$PREFIX"
+SHARDPATH="$WPATH/drive_c/Program Files/Minkata"
+RENAMPATH="$WPATH/drive_c/Program Files/Uru Live"
 
 if [ "$(POL_Wine_PrefixExists 'mystonline')" = "True" ]; then
     mkdir "$SHARDPATH"
@@ -49,7 +44,7 @@ else
     POL_Wine MOULInstaller.exe
     POL_Wine_WaitExit "$TITLE"
 
-    #Rename the Uru Live folder to "Minkata", to let the installer recognize it
+    #Rename the Uru Live folder to "Minkata"
     mv "$RENAMPATH" "$SHARDPATH"
 fi
 
