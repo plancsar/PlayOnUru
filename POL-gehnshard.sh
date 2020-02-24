@@ -23,21 +23,8 @@ cd "$POL_System_TmpDir"
 
 # Installing components
 POL_Call POL_Install_d3dx10
-# POL_Call POL_Install_vcrun2015
+#POL_Call POL_Install_vcrun2015
 #POL_Call POL_Install_crypt32
-
-# If MO:ULa is already installed in $MOULAPATH, copy the datafiles from there
-if [ -d $HOME/Library/PlayOnMac ]; then
-    MOULAPATH="$HOME/Library/PlayOnMac/wineprefix/mystonline/drive_c/Program Files/Uru Live"
-    SHARDPATH="$HOME/Library/PlayOnMac/wineprefix/$PREFIX/drive_c/Program Files/Gehn Shard"
-    RENAMPATH="$HOME/Library/PlayOnMac/wineprefix/$PREFIX/drive_c/Program Files/Uru Live"
-    WPATH="$HOME/Library/PlayOnMac/wineprefix/$PREFIX"
-elif [ -d $HOME/.PlayOnLinux ]; then
-    MOULAPATH="$HOME/.PlayOnLinux/wineprefix/mystonline/drive_c/Program Files/Uru Live"
-    SHARDPATH="$HOME/.PlayOnLinux/wineprefix/$PREFIX/drive_c/Program Files/Gehn Shard"
-    RENAMPATH="$HOME/.PlayOnLinux/wineprefix/$PREFIX/drive_c/Program Files/Uru Live"
-    WPATH="$HOME/.PlayOnLinux/wineprefix/$PREFIX"
-fi
 
 # Installing vcrun2015 with Winetricks, since it's missing from POL's components
 POL_Download "https://raw.githubusercontent.com/winetricks/winetricks/master/src/winetricks"
@@ -48,10 +35,17 @@ WINEPREFIX="$WPATH" winetricks vcrun2015
 # Should be done now, as vcrun2015 will reset the system to Win XP
 # Set_OS "win8"
 
+# If MO:ULa is already installed in $MOULAPATH, copy the datafiles from there
+MOULAPATH="$POL_USER_ROOT/wineprefix/mystonline/drive_c/Program Files/Uru Live"
+WPATH="$POL_USER_ROOT/wineprefix/$PREFIX"
+SHARDPATH="$WPATH/drive_c/Program Files/Gehn Shard"
+RENAMPATH="$WPATH/drive_c/Program Files/Uru Live"
+
 if [ "$(POL_Wine_PrefixExists 'mystonline')" = "True" ]; then
-    mkdir "$SHARDPATH"
+    mkdir -p "$SHARDPATH"
     POL_SetupWindow_wait "Copying data from the Myst Online prefix..." "$TITLE"
     cp -r "$MOULAPATH"/dat "$MOULAPATH"/sfx "$MOULAPATH"/avi "$SHARDPATH"/
+fi
 
 # Installing the shard
 POL_Download "https://guildofwriters.org/cwe/gehn_shard.exe"
