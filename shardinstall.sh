@@ -65,7 +65,7 @@ while true; do
 
             read -p "Do you wish to add the 'urulive' alias to $BASHFILE ? [y/n] " yn
             if [[ $yn == "y" || $yn == "Y" ]]; then
-                echo 'alias urulive="WINEPREFIX=$HOME/uru-live wine start /unix $HOME/uru-live/drive_c/Program\ Files/Uru\ Live/UruLauncher.exe"' >> $HOME/$BASHFILE
+                echo "alias urulive=\"WINEPREFIX=$SHARDPREFIX wine start /unix $SHARDPREFIX/drive_c/Program\ Files/Uru\ Live/UruLauncher.exe\"" >> $HOME/$BASHFILE
             fi
             ;;
         2)
@@ -109,8 +109,8 @@ while true; do
 
             read -p "Do you wish to add the 'gehnshard' and 'gehnshard-repair' aliases to $BASHFILE ? [y/n] " yn
             if [[ $yn == "y" || $yn == "Y" ]]; then
-                echo 'alias gehnshard="WINEPREFIX=$HOME/uru-gehn wine start /unix $HOME/uru-gehn/drive_c/Program\ Files/Gehn\ Shard/UruLauncher.exe"' >> $HOME/$BASHFILE
-                echo 'alias gehnshard-repair="WINEPREFIX=$HOME/uru-gehn wine start /unix $HOME/uru-gehn/drive_c/Program\ Files/Gehn\ Shard/UruLauncher.exe /ServerIni=repair.ini /Repair"' >> $HOME/$BASHFILE
+                echo "alias gehnshard=\"WINEPREFIX=$SHARDPREFIX wine start /unix $SHARDPREFIX/drive_c/Program\ Files/Gehn\ Shard/UruLauncher.exe\"" >> $HOME/$BASHFILE
+                echo "alias gehnshard-repair=\"WINEPREFIX=$SHARDPREFIX wine start /unix $SHARDPREFIX/drive_c/Program\ Files/Gehn\ Shard/UruLauncher.exe /ServerIni=repair.ini /Repair\"" >> $HOME/$BASHFILE
             fi
             ;;
         3)
@@ -154,8 +154,8 @@ while true; do
 
             read -p "Do you wish to add the 'opencave' and 'opencave-repair' aliases to $BASHFILE ? [y/n] " yn
             if [[ $yn == "y" || $yn == "Y" ]]; then
-                echo 'alias opencave="WINEPREFIX=$HOME/uru-toc wine start /unix $HOME/uru-toc/drive_c/Program\ Files/TOC-Moul/UruLauncher.exe"' >> $HOME/$BASHFILE
-                echo 'alias opencave-repair="WINEPREFIX=$HOME/uru-toc wine start /unix $HOME/uru-toc/drive_c/Program\ Files/TOC-Moul/UruLauncher.exe /ServerIni=repair.ini /Repair"' >> $HOME/$BASHFILE
+                echo "alias opencave=\"WINEPREFIX=$SHARDPREFIX wine start /unix $SHARDPREFIX/drive_c/Program\ Files/TOC-Moul/UruLauncher.exe\"" >> $HOME/$BASHFILE
+                echo "alias opencave-repair=\"WINEPREFIX=$SHARDPREFIX wine start /unix $SHARDPREFIX/drive_c/Program\ Files/TOC-Moul/UruLauncher.exe /ServerIni=repair.ini /Repair\"" >> $HOME/$BASHFILE
             fi
             ;;
         4)
@@ -223,7 +223,7 @@ while true; do
 
             read -p "Do you wish to add the 'minkata' alias to $BASHFILE ? [y/n] " yn
             if [[ $yn == "y" || $yn == "Y" ]]; then
-                echo 'alias minkata="WINEPREFIX=$HOME/uru-minkata wine start /unix $HOME/uru-minkata/drive_c/Program\ Files/Minkata/UruLauncher.exe"' >> $HOME/$BASHFILE
+                echo "alias minkata=\"WINEPREFIX=$SHARDPREFIX wine start /unix $SHARDPREFIX/drive_c/Program\ Files/Minkata/UruLauncher.exe\"" >> $HOME/$BASHFILE
             fi
             ;;
         5)
