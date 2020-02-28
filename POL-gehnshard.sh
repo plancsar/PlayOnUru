@@ -1,5 +1,5 @@
 #!/usr/bin/env playonlinux-bash
-# Date: 2020-02-23
+# Date: 2020-02-28
 # Wine version used: 3.0
 # Distribution used to test: Lubuntu 18.04 LTS 64bit (VirtualBox)
 # Author: Korovev
@@ -10,6 +10,10 @@ source "$PLAYONLINUX/lib/sources"
 TITLE="Gehn Shard"
 PREFIX="gehnshard"
 
+MOULAPATH="$POL_USER_ROOT/wineprefix/mystonline/drive_c/Program Files/Uru Live"
+WPATH="$POL_USER_ROOT/wineprefix/$PREFIX"
+SHARDPATH="$WPATH/drive_c/Program Files/Gehn Shard"
+RENAMPATH="$WPATH/drive_c/Program Files/Uru Live"
 
 POL_SetupWindow_Init
 POL_SetupWindow_presentation "$TITLE" "Guild of Writers" "https://www.guildofwriters.org/gehn/" "Korovev" "$PREFIX"
@@ -36,11 +40,6 @@ WINEPREFIX="$WPATH" winetricks vcrun2015
 # Set_OS "win8"
 
 # If MO:ULa is already installed in $MOULAPATH, copy the datafiles from there
-MOULAPATH="$POL_USER_ROOT/wineprefix/mystonline/drive_c/Program Files/Uru Live"
-WPATH="$POL_USER_ROOT/wineprefix/$PREFIX"
-SHARDPATH="$WPATH/drive_c/Program Files/Gehn Shard"
-RENAMPATH="$WPATH/drive_c/Program Files/Uru Live"
-
 if [ "$(POL_Wine_PrefixExists 'mystonline')" = "True" ]; then
     mkdir -p "$SHARDPATH"
     POL_SetupWindow_wait "Copying data from the Myst Online prefix..." "$TITLE"
