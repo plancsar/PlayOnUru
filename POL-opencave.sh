@@ -1,5 +1,5 @@
 #!/usr/bin/env playonlinux-bash
-# Date: 2020-02-23
+# Date: 2020-02-28
 # Wine version used: 3.0
 # Distribution used to test: Lubuntu 18.04 LTS 64bit (VirtualBox)
 # Author: Korovev
@@ -9,6 +9,11 @@ source "$PLAYONLINUX/lib/sources"
 
 TITLE="The Open Cave"
 PREFIX="toc_moul"
+
+MOULAPATH="$POL_USER_ROOT/wineprefix/mystonline/drive_c/Program Files/Uru Live"
+WPATH="$POL_USER_ROOT/wineprefix/$PREFIX"
+SHARDPATH="$WPATH/drive_c/Program Files/TOC-Moul"
+RENAMPATH="$WPATH/drive_c/Program Files/Uru Live"
 
 POL_SetupWindow_Init
 POL_SetupWindow_presentation "$TITLE" "$TITLE" "http://the-open-cave.net/en/" "Korovev" "$PREFIX"
@@ -24,11 +29,6 @@ cd "$POL_System_TmpDir"
 POL_Call POL_Install_vcrun2013
 
 # If MO:ULa is already installed in $MOULAPATH, copy the datafiles from there
-MOULAPATH="$POL_USER_ROOT/wineprefix/mystonline/drive_c/Program Files/Uru Live"
-WPATH="$POL_USER_ROOT/wineprefix/$PREFIX"
-SHARDPATH="$WPATH/drive_c/Program Files/TOC-Moul"
-RENAMPATH="$WPATH/drive_c/Program Files/Uru Live"
-
 if [ "$(POL_Wine_PrefixExists 'mystonline')" = "True" ]; then
     mkdir "$SHARDPATH"
     POL_SetupWindow_wait "Copying data from the Myst Online prefix..." "$TITLE"
