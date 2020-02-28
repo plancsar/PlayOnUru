@@ -43,5 +43,6 @@ POL_Wine_WaitExit "$TITLE"
 # Cleanup
 POL_System_TmpDelete 
 POL_Shortcut "UruLauncher.exe" "$TITLE"
+POL_Shortcut "UruLauncher.exe" "$TITLE repair" "" "/ServerIni=repair.ini /Repair"
 POL_SetupWindow_Close
 exit
