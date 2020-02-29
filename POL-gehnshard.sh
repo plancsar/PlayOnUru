@@ -28,7 +28,7 @@ cd "$POL_System_TmpDir"
 # Installing components
 POL_Call POL_Install_d3dx10
 #POL_Call POL_Install_vcrun2015
-#POL_Call POL_Install_crypt32
+POL_Call POL_Install_crypt32
 
 # Installing vcrun2015 with Winetricks, since it's missing from POL's components
 POL_Download "https://raw.githubusercontent.com/winetricks/winetricks/master/src/winetricks"
