@@ -1,7 +1,7 @@
 #!/bin/bash
 # A basic script to install MOULa and shards on linux.
 # It assumes a recent version of Wine (from WineHQ) and winetricks are already installed.
-# -- Korov'ev, 2020-02-19
+# -- Korov'ev, 2020-05-17
 
 read -p "Do you prefer instructions in English or D'ni? [1 English, 5 D'ni] " lang
 if [[ $lang == "5" ]]; then
@@ -9,9 +9,9 @@ if [[ $lang == "5" ]]; then
 fi
 
 if [[ "$OSTYPE" == "darwin"* ]]; then
-    $BASHFILE = ".profile"
+    BASHFILE=".profile"
 else
-    $BASHFILE = ".bashrc"
+    BASHFILE=".bashrc"
 fi
 
 while true; do
@@ -181,32 +181,12 @@ while true; do
             echo "Installing the Minkata testing shard..."
             WINEARCH=win32 WINEPREFIX="$SHARDPREFIX" winetricks vcrun6 >> $HOME/uru-wine.log 2>&1
 
-            echo "Fixing PhysX..."
-            curl -L -O "https://raw.githubusercontent.com/plancsar/PlayOnUru/master/PhysX_Setup.exe"
-            chmod 755 PhysX_Setup.exe
-            WINEPREFIX="$SHARDPREFIX" wine start /unix "$INSTALLDIR/PhysX_Setup.exe" >> $HOME/uru-wine.log 2>&1
-            echo "Advance the installer with the mouse, the keyboard may be intercepted by the script."
-            echo "When PhysX is done, press any key to continue."
-            read -n 1 -s -r
-
-            sleep 5
-
             if [ -d "$HOME/uru-live/drive_c/Program Files/Uru Live" ]; then
                 echo "Copying MOUL files..."
                 cp -r "$HOME/uru-live/drive_c/Program Files/Uru Live" "$SHARDFOLDER/"
                 mv "$SHARDFOLDER/Uru Live" "$SHARDFOLDER/Minkata"
             else
-                if [ ! -f "MOULInstaller.exe" ]; then
-                    echo "Downloading the MOUL installer..."
-                    curl -L -O "http://account.mystonline.com/download/MOULInstaller.exe"
-                    chmod 755 MOULInstaller.exe
-                fi
-                echo "Launching the MOUL installer (give it a few seconds)..."
-                WINEPREFIX="$SHARDPREFIX" wine start /unix "$INSTALLDIR/MOULInstaller.exe" >> $HOME/uru-wine.log 2>&1
-                echo "Advance the installer with the mouse, the keyboard may be intercepted by the script."
-                echo "When the installation and updating is done, press any key to continue."
-                read -n 1 -s -r
-                mv "$SHARDFOLDER/Uru Live" "$SHARDFOLDER/Minkata"
+                mkdir "$SHARDFOLDER/Minkata"
             fi
 
             cd "$SHARDFOLDER/Minkata/"
@@ -221,9 +201,20 @@ while true; do
             echo "When the patching is done, press any key to continue."
             read -n 1 -s -r
 
+            read -p "Do you wish to install Minkata Alpha too ? [y/n] " myn
+            if [[ $myn == "y" || $myn == "Y" ]]; then
+                cp -r "$SHARDFOLDER/Minkata/" "$SHARDFOLDER/MinkataA/"
+                cd "$SHARDFOLDER/MinkataA/"
+            fi
+
             read -p "Do you wish to add the 'minkata' alias to $BASHFILE ? [y/n] " yn
             if [[ $yn == "y" || $yn == "Y" ]]; then
                 echo "alias minkata=\"WINEPREFIX=$SHARDPREFIX wine start /unix $SHARDPREFIX/drive_c/Program\ Files/Minkata/UruLauncher.exe\"" >> $HOME/$BASHFILE
+
+                if [[ $myn == "y" || $myn == "Y" ]]; then
+                    echo "Adding the 'minkatalpha' alias too..."
+                    echo "alias minkatalpha=\"WINEPREFIX=$SHARDPREFIX wine start /unix $SHARDPREFIX/drive_c/Program\ Files/MinkataA/UruLauncher.exe /GateKeeperSrv=70.91.173.88:14717 /FileSrv=70.91.173.88:14717 /AuthSrv=70.91.173.88:14717\"" >> $HOME/$BASHFILE
+                fi
             fi
             ;;
         5)
