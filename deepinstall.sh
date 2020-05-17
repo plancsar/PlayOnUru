@@ -6,9 +6,9 @@
 INSTALLDIR="$HOME/uru-installers"
 
 if [[ "$OSTYPE" == "darwin"* ]]; then
-    $BASHFILE = ".profile"
+    BASHFILE=".profile"
 else
-    $BASHFILE = ".bashrc"
+    BASHFILE=".bashrc"
 fi
 
 mkdir -p "$INSTALLDIR" && cd "$INSTALLDIR"
@@ -54,7 +54,7 @@ while true; do
     read -p "Do you wish to add the 'drizzle' and 'deepisland' aliases to $BASHFILE ? [y/n] " yn
     case $yn in
         [Yy]* )
-            echo 'alias drizzle="cd $HOME/uru-deepisland/drive_c/Program\ Files/Deep\ Island; java -jar Drizzle31.jar"' >> $HOME/$BASHFILE
+            echo 'alias drizzle="java -jar $HOME/uru-deepisland/drive_c/Program\ Files/Deep\ Island/Drizzle31.jar"' >> $HOME/$BASHFILE
             echo 'alias deepisland="WINEPREFIX=$HOME/uru-deepisland wine start /unix $HOME/uru-deepisland/drive_c/Program\ Files/Deep\ Island/Uru.exe"' >> $HOME/$BASHFILE
             break;;
         [Nn]* ) break;;
