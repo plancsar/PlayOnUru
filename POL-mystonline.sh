@@ -23,8 +23,6 @@ cd "$POL_System_TmpDir"
 
 # Installing components
 POL_Call POL_Install_vcrun6
-POL_Download "https://raw.githubusercontent.com/plancsar/PlayOnUru/master/PhysX_Setup.exe"
-POL_Wine PhysX_Setup.exe
 POL_Wine_WaitExit "$TITLE"
 
 # Download & Install the game
