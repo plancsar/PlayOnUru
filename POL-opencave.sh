@@ -36,7 +36,7 @@ if [ "$(POL_Wine_PrefixExists 'mystonline')" = "True" ]; then
 fi
 
 # Install the game
-POL_Download "http://other.the-open-cave.net/installer/TOC-Moul.exe"
+curl -L -O "https://other.the-open-cave.net/installer/TOC-Moul.exe"
 POL_Wine TOC-Moul.exe
 POL_Wine_WaitExit "$TITLE"
 
