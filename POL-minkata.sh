@@ -51,8 +51,14 @@ cd "$SHARDPATH"/
 rm UruLauncher.exe
 POL_Download "http://foundry.openuru.org/jenkins/job/CWE-ou-minkata-Compile/lastSuccessfulBuild/BuildType=External,Platform=Windows2k3Builder/artifact/MOULOpenSourceClientPlugin/Plasma20/MsDevProjects/Plasma/Apps/plUruLauncher/Release/UruLauncher.exe"
 
+# Adding a Minkata Alpha folder
+cd ..
+cp -r Minkata Minkata\ Alpha
+cd Minkata-alpha
+
 # Cleanup
 POL_System_TmpDelete
-POL_Shortcut "UruLauncher.exe" "Minkata"
+POL_Shortcut "Program Files/Minkata/UruLauncher.exe" "Minkata"
+POL_Shortcut "Program Files/Minkata Alpha/UruLauncher.exe" "Minkata Alpha" "" "/GateKeeperSrv=70.91.173.88:14717 /FileSrv=70.91.173.88:14717 /AuthSrv=70.91.173.88:14717"
 POL_SetupWindow_Close
 exit
