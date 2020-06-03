@@ -46,14 +46,6 @@ while true; do
             fi
 
             WINEARCH=win32 WINEPREFIX="$SHARDPREFIX" winetricks vcrun6 >> $HOME/uru-wine.log 2>&1
-            
-            echo "Fixing PhysX..."
-            curl -L -O "https://raw.githubusercontent.com/plancsar/PlayOnUru/master/PhysX_Setup.exe"
-            chmod 755 PhysX_Setup.exe
-            WINEPREFIX="$SHARDPREFIX" wine start /unix "$INSTALLDIR/PhysX_Setup.exe" >> $HOME/uru-wine.log 2>&1
-            echo "Advance the installer with the mouse, the keyboard may be intercepted by the script."
-            echo "When PhysX is done, press any key to continue."
-            read -n 1 -s -r
 
             echo "Launching the installer (give it a few seconds)..."
             sleep 5
