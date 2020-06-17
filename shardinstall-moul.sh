@@ -1,7 +1,11 @@
 #!/bin/bash
-# A basic script to install MOULa and shards on linux.
-# It assumes a recent version of Wine (from WineHQ) and winetricks are already installed.
-# -- Korov'ev, 2020-05-17
+# Date: 2020-06-03
+# Wine version used: 3.0
+# Distribution used to test: macOS 10.14.6 "Mojave" & Lubuntu 18.04 LTS 64bit (VirtualBox)
+# Author: Korovev
+# Description: A basic script to install MOULa and shards on macOS or Linux.
+#   It assumes a recent version of Wine (from WineHQ) and winetricks
+#   are already installed.
 
 read -p "Do you prefer instructions in English or D'ni? [1 English, 5 D'ni] " lang
 if [[ $lang == "5" ]]; then
