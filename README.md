@@ -14,6 +14,6 @@ The Uru CC + Drizzle will also download Drizzle32 and put in <code>$HOME/bin</co
 # Other scripts
 Basic Bash install scripts for Linux and macOS, using only Wine (preferably from WineHQ) and winetricks.
 
-<b>shardinstall</b>: to install MOULa, Gehn, Open Cave and/or Minkata. If MOULa is installed first, the other options will copy the game files from it.
+<b>shardinstall-moul</b>: to install MOULa, Gehn, Open Cave and/or Minkata. If MOULa is installed first, the other options will copy the game files from it.
 
-<b>deepinstall</b> (WIP): to install and configure a Deep Island client, possibly (but not currently) including the conversion of the Myst V Ages. Currently based on the GOG installer only. The full installer path should be inputted when requested.
+<b>shardinstall-pots</b> (WIP): to install and configure Uru CC + Drizzle, Deep island and/or The Open Cave (PotS). Currently based on the 25th Anniversary app on macOS, or the GOG installer on Linux, which should be in the same folder as the script.
