@@ -1,7 +1,7 @@
 #!/usr/bin/env playonlinux-bash
-# Date: 2020-02-28
+# Date: 2020-06-03
 # Wine version used: 3.0
-# Distribution used to test: Lubuntu 18.04 LTS 64bit (VirtualBox)
+# Distribution used to test: macOS 10.14.6 "Mojave" & Lubuntu 18.04 LTS 64bit (VirtualBox)
 # Author: Korovev
 
 [ "$PLAYONLINUX" = "" ] && exit 0
