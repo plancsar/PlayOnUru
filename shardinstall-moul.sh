@@ -1,5 +1,5 @@
 #!/bin/bash
-# Date: 2020-06-03
+# Date: 2020-08-27
 # Wine version used: 3.0
 # Distribution used to test: macOS 10.14.6 "Mojave" & Lubuntu 18.04 LTS 64bit (VirtualBox)
 # Author: Korovev
@@ -49,7 +49,7 @@ while true; do
                 chmod 755 MOULInstaller.exe
             fi
 
-            WINEARCH=win32 WINEPREFIX="$SHARDPREFIX" winetricks vcrun6 >> $HOME/uru-wine.log 2>&1
+            WINEARCH=win32 WINEPREFIX="$SHARDPREFIX" winetricks vcrun2012 d3dx10 >> $HOME/uru-wine.log 2>&1
 
             echo "Launching the installer (give it a few seconds)..."
             sleep 5
