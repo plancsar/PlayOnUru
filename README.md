@@ -4,7 +4,7 @@ A collection of PlayOnLinux/PlayOnMac scripts (POL-\*) to install Uru Live and s
 <b>Gehn Shard</b>: the script tries to copy the data files from the Uru Live prefix, if it exists.
 If the game fails to delete the old patcher executable, just keep trying relaunching it, after a couple of attempts it should manage.
 
-<b>Minkata</b>: the script tries to copy the data files from the Uru Live prefix, if it exists, otherwise it installs Uru Live, then Minkata on top of it.
+<b>Minkata</b>: the script tries to copy the data files from the Uru Live prefix, if it exists, otherwise it installs Uru Live, then Minkata on top of it. It will then duplicate the Minkata folder to set up Minkata Alpha
 
 <b>The Open Cave</b>: the script tries to copy the data files from the Uru Live prefix, if it exists.
 
@@ -16,4 +16,4 @@ Basic Bash install scripts for Linux and macOS, using only Wine (preferably from
 
 <b>shardinstall-moul</b>: to install MOULa, Gehn, Open Cave and/or Minkata. If MOULa is installed first, the other options will copy the game files from it.
 
-<b>shardinstall-pots</b> (WIP): to install and configure Uru CC + Drizzle, Deep island and/or The Open Cave (PotS). Currently based on the 25th Anniversary app on macOS, or the GOG installer on Linux, which should be in the same folder as the script.
+<b>shardinstall-pots</b> (WIP): to install and configure Uru CC + Drizzle, Deep island and/or The Open Cave (PotS). Currently based on the 25th Anniversary app on macOS, or the GOG installer on Linux. The app or the installer should be in the same folder as the script.
