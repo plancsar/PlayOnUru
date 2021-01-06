@@ -61,7 +61,7 @@ while true; do
 
             read -p "Do you wish to add the 'urulive' alias to $BASHFILE ? [y/n] " yn
             if [[ $yn == "y" || $yn == "Y" ]]; then
-                echo "alias urulive=\"WINEPREFIX=$SHARDPREFIX wine start /unix $SHARDPREFIX/drive_c/Program\ Files/Uru\ Live/UruLauncher.exe\"" >> $HOME/$BASHFILE
+                echo "alias urulive=\"WINEPREFIX=$SHARDPREFIX wine start /unix $SHARDPREFIX/drive_c/Myst\ Online\ Uru\ Live\(again\)/UruLauncher.exe\"" >> $HOME/$BASHFILE
             fi
             ;;
         2)
