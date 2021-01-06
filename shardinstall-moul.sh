@@ -45,7 +45,7 @@ while true; do
             echo "Installing Myst Online: Uru Live..."
             if [ ! -f "MOULInstaller.exe" ]; then
                 echo "Downloading the installer..."
-                curl -L -O "http://account.mystonline.com/download/MOULInstaller.exe"
+                curl -k -L -O "http://account.mystonline.com/download/MOULInstaller.exe"
                 chmod 755 MOULInstaller.exe
             fi
 
