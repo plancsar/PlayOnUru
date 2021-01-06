@@ -91,9 +91,9 @@ while true; do
 
             WINEARCH=win32 WINEPREFIX="$SHARDPREFIX" winetricks vcrun2015 d3dx10 >> $HOME/uru-wine.log 2>&1
 
-            if [ -d "$HOME/uru-live/drive_c/Program Files/Uru Live" ]; then
+            if [ -d "$HOME/uru-live/drive_c/Myst Online Uru Live(again)" ]; then
                 echo "Copying MOUL files..."
-                cp -r "$HOME/uru-live/drive_c/Program Files/Uru Live" "$SHARDFOLDER/"
+                cp -r "$HOME/uru-live/drive_c/Myst Online Uru Live(again)" "$SHARDFOLDER/"
                 mv "$SHARDFOLDER/Uru Live" "$SHARDFOLDER/Gehn shard"
             fi
 
@@ -136,9 +136,9 @@ while true; do
 
             WINEARCH=win32 WINEPREFIX="$SHARDPREFIX" winetricks vcrun2013 d3dx10 >> $HOME/uru-wine.log 2>&1
 
-            if [ -d "$HOME/uru-live/drive_c/Program Files/Uru Live" ]; then
+            if [ -d "$HOME/uru-live/drive_c/Myst Online Uru Live(again)" ]; then
                 echo "Copying MOUL files..."
-                cp -r "$HOME/uru-live/drive_c/Program Files/Uru Live" "$SHARDFOLDER/"
+                cp -r "$HOME/uru-live/drive_c/Myst Online Uru Live(again)" "$SHARDFOLDER/"
                 mv "$SHARDFOLDER/Uru Live" "$SHARDFOLDER/TOC-Moul"
             fi
 
@@ -177,9 +177,9 @@ while true; do
             echo "Installing the Minkata testing shard..."
             WINEARCH=win32 WINEPREFIX="$SHARDPREFIX" winetricks vcrun6 >> $HOME/uru-wine.log 2>&1
 
-            if [ -d "$HOME/uru-live/drive_c/Program Files/Uru Live" ]; then
+            if [ -d "$HOME/uru-live/drive_c/Myst Online Uru Live(again)" ]; then
                 echo "Copying MOUL files..."
-                cp -r "$HOME/uru-live/drive_c/Program Files/Uru Live" "$SHARDFOLDER/"
+                cp -r "$HOME/uru-live/drive_c/Myst Online Uru Live(again)" "$SHARDFOLDER/"
                 mv "$SHARDFOLDER/Uru Live" "$SHARDFOLDER/Minkata"
             else
                 mkdir "$SHARDFOLDER/Minkata"
