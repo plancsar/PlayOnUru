@@ -28,7 +28,7 @@ POL_Call POL_Install_crypt32
 POL_Wine_WaitExit "$TITLE"
 
 # Download & Install the game
-curl -L -O "http://account.mystonline.com/download/MOULInstaller.exe"
+curl -k -L -O "http://account.mystonline.com/download/MOULInstaller.exe"
 POL_Wine MOULInstaller.exe
 POL_Wine_WaitExit "$TITLE"
 
