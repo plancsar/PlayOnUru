@@ -94,7 +94,7 @@ while true; do
             if [ -d "$HOME/uru-live/drive_c/Myst Online Uru Live(again)" ]; then
                 echo "Copying MOUL files..."
                 cp -r "$HOME/uru-live/drive_c/Myst Online Uru Live(again)" "$SHARDFOLDER/"
-                mv "$SHARDFOLDER/Uru Live" "$SHARDFOLDER/Gehn shard"
+                mv "$SHARDFOLDER/Myst Online Uru Live(again)" "$SHARDFOLDER/Gehn shard"
             fi
 
             echo "Launching the installer..."
@@ -139,7 +139,7 @@ while true; do
             if [ -d "$HOME/uru-live/drive_c/Myst Online Uru Live(again)" ]; then
                 echo "Copying MOUL files..."
                 cp -r "$HOME/uru-live/drive_c/Myst Online Uru Live(again)" "$SHARDFOLDER/"
-                mv "$SHARDFOLDER/Uru Live" "$SHARDFOLDER/TOC-Moul"
+                mv "$SHARDFOLDER/Myst Online Uru Live(again)" "$SHARDFOLDER/TOC-Moul"
             fi
 
             echo "Launching the installer..."
@@ -180,7 +180,7 @@ while true; do
             if [ -d "$HOME/uru-live/drive_c/Myst Online Uru Live(again)" ]; then
                 echo "Copying MOUL files..."
                 cp -r "$HOME/uru-live/drive_c/Myst Online Uru Live(again)" "$SHARDFOLDER/"
-                mv "$SHARDFOLDER/Uru Live" "$SHARDFOLDER/Minkata"
+                mv "$SHARDFOLDER/Myst Online Uru Live(again)" "$SHARDFOLDER/Minkata"
             else
                 mkdir "$SHARDFOLDER/Minkata"
             fi
