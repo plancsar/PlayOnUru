@@ -26,7 +26,7 @@ POL_Call POL_Install_vcrun6
 POL_Wine_WaitExit "$TITLE"
 
 # If MO:ULa is already installed in $MOULAPATH, copy the datafiles from there
-MOULAPATH="$POL_USER_ROOT/wineprefix/mystonline/drive_c/Program Files/Uru Live"
+MOULAPATH="$POL_USER_ROOT/wineprefix/mystonline/drive_c/Myst Online Uru Live(again)"
 WPATH="$POL_USER_ROOT/wineprefix/$PREFIX"
 SHARDPATH="$WPATH/drive_c/Program Files/Minkata"
 RENAMPATH="$WPATH/drive_c/Program Files/Uru Live"
