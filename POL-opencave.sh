@@ -10,7 +10,7 @@ source "$PLAYONLINUX/lib/sources"
 TITLE="The Open Cave"
 PREFIX="toc_moul"
 
-MOULAPATH="$POL_USER_ROOT/wineprefix/mystonline/drive_c/Program Files/Uru Live"
+MOULAPATH="$POL_USER_ROOT/wineprefix/mystonline/drive_c/Myst Online Uru Live(again)"
 WPATH="$POL_USER_ROOT/wineprefix/$PREFIX"
 SHARDPATH="$WPATH/drive_c/Program Files/TOC-Moul"
 RENAMPATH="$WPATH/drive_c/Program Files/Uru Live"
