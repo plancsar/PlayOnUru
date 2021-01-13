@@ -1,7 +1,7 @@
 #!/usr/bin/env playonlinux-bash
-# Date: 2018-06-16 23:00 GMT
-# Wine version used: 3.0
-# Distribution used to test: macOS 10.14.6 "Mojave" & Lubuntu 18.04 LTS 64bit (VirtualBox)
+# Date: 2021-01-13
+# Wine version used: 5.7
+# Distribution used to test: macOS 10.14.5 "Mojave" & Lubuntu 20.04 LTS 64bit
 # Author: Korovev
 
 [ "$PLAYONLINUX" = "" ] && exit 0
@@ -16,14 +16,14 @@ POL_SetupWindow_presentation "$TITLE" "Guild of Writers" "https://forum.guildofw
 
 POL_Wine_SelectPrefix "$PREFIX"
 POL_System_SetArch "x86"
-POL_Wine_PrefixCreate "3.0"
+POL_Wine_PrefixCreate "5.7"
 
 POL_System_TmpCreate "$PREFIX"
 cd "$POL_System_TmpDir"
 
 
 # Installing components
-POL_Call POL_Install_vcrun6
+#POL_Call POL_Install_vcrun6
 
 
 #  Copy the game files from the 25th anniversary app if macOS
