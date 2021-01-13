@@ -1,7 +1,7 @@
 #!/usr/bin/env playonlinux-bash
-# Date: 2020-02-29
-# Wine version used: 3.0
-# Distribution used to test: macOS 10.14.6 "Mojave" & Lubuntu 18.04 LTS 64bit (VirtualBox)
+# Date: 2021-01-13
+# Wine version used: 5.7
+# Distribution used to test: macOS 10.14.5 "Mojave" & Lubuntu 20.04 LTS 64bit
 # Author: Korovev
 
 [ "$PLAYONLINUX" = "" ] && exit 0
@@ -20,20 +20,20 @@ POL_SetupWindow_presentation "$TITLE" "Guild of Writers" "https://www.guildofwri
 
 POL_Wine_SelectPrefix "$PREFIX"
 POL_System_SetArch "x86"
-POL_Wine_PrefixCreate "3.0"
+POL_Wine_PrefixCreate "5.7"
 
 POL_System_TmpCreate "$PREFIX"
 cd "$POL_System_TmpDir"
 
 # Installing components
-POL_Call POL_Install_d3dx10
+#POL_Call POL_Install_d3dx10
 #POL_Call POL_Install_vcrun2015
-POL_Call POL_Install_crypt32
+#POL_Call POL_Install_crypt32
 
 # Installing vcrun2015 with Winetricks, since it's missing from POL's components
-POL_Download "https://raw.githubusercontent.com/winetricks/winetricks/master/src/winetricks"
-chmod +x winetricks
-WINEPREFIX="$WPATH" winetricks vcrun2015
+#POL_Download "https://raw.githubusercontent.com/winetricks/winetricks/master/src/winetricks"
+#chmod +x winetricks
+#WINEPREFIX="$WPATH" winetricks vcrun2015
 
 # Setting the virtualized system to Win 8
 # Should be done now, as vcrun2015 will reset the system to Win XP
