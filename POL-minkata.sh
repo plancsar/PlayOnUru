@@ -1,7 +1,7 @@
 #!/usr/bin/env playonlinux-bash
-# Date: 2020-06-03
-# Wine version used: 3.0
-# Distribution used to test: macOS 10.14.6 "Mojave" & Lubuntu 18.04 LTS 64bit (VirtualBox)
+# Date: 2021-01-13
+# Wine version used: 5.7
+# Distribution used to test: macOS 10.14.5 "Mojave" & Lubuntu 20.04 LTS 64bit
 # Author: Korovev
 
 [ "$PLAYONLINUX" = "" ] && exit 0
@@ -15,15 +15,14 @@ POL_SetupWindow_presentation "$TITLE" "OpenUru.org" "http://openuru.org/" "Korov
 
 POL_Wine_SelectPrefix "$PREFIX"
 POL_System_SetArch "x86"
-POL_Wine_PrefixCreate "3.0"
-#Set_Desktop "On" "1024" "768"
+POL_Wine_PrefixCreate "5.7"
 
 POL_System_TmpCreate "$PREFIX"
 cd "$POL_System_TmpDir"
 
 # Installing components
-POL_Call POL_Install_vcrun6
-POL_Wine_WaitExit "$TITLE"
+#POL_Call POL_Install_vcrun6
+#POL_Wine_WaitExit "$TITLE"
 
 # If MO:ULa is already installed in $MOULAPATH, copy the datafiles from there
 MOULAPATH="$POL_USER_ROOT/wineprefix/mystonline/drive_c/Myst Online Uru Live(again)"
