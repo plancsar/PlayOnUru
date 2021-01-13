@@ -1,7 +1,7 @@
 #!/bin/bash
-# Date: 2020-08-27
-# Wine version used: 3.0
-# Distribution used to test: macOS 10.14.6 "Mojave" & Lubuntu 18.04 LTS 64bit (VirtualBox)
+# Date: 2021-01-13
+# Wine version used: system
+# Distribution used to test: macOS 10.14.5 "Mojave" & Lubuntu 20.04 LTS 64bit
 # Author: Korovev
 # Description: A basic script to install MOULa and shards on macOS or Linux.
 #   It assumes a recent version of Wine (from WineHQ) and winetricks
