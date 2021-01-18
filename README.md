@@ -11,6 +11,8 @@ If the game fails to delete the old patcher executable, just keep trying relaunc
 <b>Uru CC + Drizzle</b>, <b>Deep Island</b>, <b>Open Cave PotS</b>: currently based on the 25th Anniversary app on macOS, or the GOG installer on Linux. The first time you launch the game, you'll get error alerts and crashes, but after a few attempts you should be able to continue.<br/>
 The Uru CC + Drizzle will also download Drizzle32 and put in <code>$HOME/bin</code>. If Drizzle prints an alert saying it can't find the Uru folder, try closing and relaunching it.
 
+<b>Myst IV</b> and <b>Myst V</b>: scripts to install the games, using the 25th Anniversary app on macOS or the GOG installer on Linux. More relevant to Linux.
+
 # Other scripts
 Basic Bash install scripts for Linux and macOS, using only Wine (preferably from WineHQ) and winetricks.
 
