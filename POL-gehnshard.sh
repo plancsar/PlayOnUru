@@ -47,7 +47,7 @@ if [ "$(POL_Wine_PrefixExists 'mystonline')" = "True" ]; then
 fi
 
 # Installing the shard
-POL_Download "https://guildofwriters.org/cwe/gehn_shard.exe"
+curl -k -L -O "https://guildofwriters.org/cwe/gehn_shard.exe"
 POL_Wine gehn_shard.exe
 POL_Wine_WaitExit "$TITLE"
 
