@@ -189,7 +189,7 @@ while true; do
             rm UruLauncher.exe
 
             echo "Downloading the patched launcher..."
-            curl -L -O "https://foundry.openuru.org/jenkins/job/CWE-ou-minkata-Compile/lastSuccessfulBuild/BuildType=External,Platform=Windows2k3Builder/artifact/MOULOpenSourceClientPlugin/Plasma20/MsDevProjects/Plasma/Apps/plUruLauncher/Release/UruLauncher.exe"
+            curl -L -O "https://foundry.openuru.org/jenkins/job/CWE-ou-minkata-Compile-Git/lastSuccessfulBuild/artifact/Plasma20/MSVC10Projects/Plasma/Apps/plUruLauncher/Release/UruLauncher.exe"
             chmod 755 UruLauncher.exe
 
             echo "Launching the game for patching..."
