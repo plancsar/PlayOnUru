@@ -14,7 +14,7 @@ The Uru CC + Drizzle will also download Drizzle and put in <code>$HOME/bin</code
 <b>Myst IV</b> and <b>Myst V</b>: scripts to install the games, using the 25th Anniversary app on macOS or the GOG installer on Linux. More relevant to Linux.
 
 # Other scripts
-Basic Bash install scripts for Linux and macOS, using only Wine (preferably from WineHQ) and winetricks.
+Basic Bash install scripts for Linux and macOS, using only Wine (preferably from WineHQ) and winetricks. On macOS, the script needs to be run inside the Terminal window launched by the WineHQ app, so it likely won't work on macOS ≥10.15.
 
 <b>shardinstall-moul</b>: to install MOULa, Gehn, Open Cave and/or Minkata. If MOULa is installed first, the other options will copy the game files from it.
 
