@@ -48,7 +48,7 @@ fi
 # Copy the game files from the Uru Live prefix and adding Minkata's Launcher
 cd "$SHARDPATH"/
 rm UruLauncher.exe
-POL_Download "https://foundry.openuru.org/jenkins/job/CWE-ou-minkata-Compile-Git/lastSuccessfulBuild/artifact/Plasma20/MSVC10Projects/Plasma/Apps/plUruLauncher/Release/UruLauncher.exe"
+POL_Download "https://foundry.openuru.org/jenkins/job/CWE-ou-minkata-Compile-Git/lastSuccessfulBuild/artifact/Plasma/Apps/plUruLauncher/Release/UruLauncher.exe"
 
 # Adding a Minkata Alpha folder
 cd ..
