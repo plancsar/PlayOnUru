@@ -189,7 +189,7 @@ while true; do
             rm UruLauncher.exe
 
             echo "Downloading the patched launcher..."
-            curl -L -O "https://foundry.openuru.org/jenkins/job/CWE-ou-minkata-Compile-Git/lastSuccessfulBuild/artifact/Plasma20/MSVC10Projects/Plasma/Apps/plUruLauncher/Release/UruLauncher.exe"
+            curl -L -O "https://foundry.openuru.org/jenkins/job/CWE-ou-minkata-Compile-Git/lastSuccessfulBuild/artifact/Plasma/Apps/plUruLauncher/Release/UruLauncher.exe"
             chmod 755 UruLauncher.exe
 
             echo "Launching the game for patching..."
@@ -199,6 +199,7 @@ while true; do
 
             read -p "Do you wish to install Minkata Alpha too ? [y/n] " myn
             if [[ $myn == "y" || $myn == "Y" ]]; then
+                echo "Copying Minkata files..."
                 cp -r "$SHARDFOLDER/Minkata/" "$SHARDFOLDER/MinkataA/"
                 cd "$SHARDFOLDER/MinkataA/"
             fi
