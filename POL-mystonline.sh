@@ -21,6 +21,7 @@ POL_System_TmpCreate "$PREFIX"
 cd "$POL_System_TmpDir"
 
 # Installing components
+POL_Call POL_Install_winhttp
 #POL_Call POL_Install_d3dx10
 #POL_Call POL_Install_vcrun2012
 #POL_Call POL_Install_crypt32
