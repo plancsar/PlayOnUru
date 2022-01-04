@@ -49,7 +49,7 @@ while true; do
                 chmod 755 MOULInstaller.exe
             fi
 
-            WINEARCH=win32 WINEPREFIX="$SHARDPREFIX" winetricks vcrun2012 d3dx10 >> $HOME/uru-wine.log 2>&1
+            WINEARCH=win32 WINEPREFIX="$SHARDPREFIX" winetricks vcrun2012 d3dx10 winhttp >> $HOME/uru-wine.log 2>&1
 
             echo "Launching the installer (give it a few seconds)..."
             sleep 5
@@ -175,7 +175,7 @@ while true; do
             mkdir -p "$INSTALLDIR" && cd "$INSTALLDIR"
 
             echo "Installing the Minkata testing shard..."
-            WINEARCH=win32 WINEPREFIX="$SHARDPREFIX" winetricks vcrun6 >> $HOME/uru-wine.log 2>&1
+            WINEARCH=win32 WINEPREFIX="$SHARDPREFIX" winetricks vcrun2012 d3dx10 winhttp >> $HOME/uru-wine.log 2>&1
 
             if [ -d "$HOME/uru-live/drive_c/Myst Online Uru Live(again)" ]; then
                 echo "Copying MOUL files..."
