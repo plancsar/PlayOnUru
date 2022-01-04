@@ -21,8 +21,11 @@ POL_System_TmpCreate "$PREFIX"
 cd "$POL_System_TmpDir"
 
 # Installing components
-#POL_Call POL_Install_vcrun6
-#POL_Wine_WaitExit "$TITLE"
+POL_Call POL_Install_winhttp
+#POL_Call POL_Install_d3dx10
+#POL_Call POL_Install_vcrun2012
+#POL_Call POL_Install_crypt32
+POL_Wine_WaitExit "$TITLE"
 
 # If MO:ULa is already installed in $MOULAPATH, copy the datafiles from there
 MOULAPATH="$POL_USER_ROOT/wineprefix/mystonline/drive_c/Myst Online Uru Live(again)"
