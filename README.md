@@ -20,3 +20,5 @@ Basic Bash install scripts for Linux and macOS, using only Wine (preferably from
 
 <b>shardinstall-pots</b> (WIP): to install and configure Uru CC + Drizzle, Deep island and/or The Open Cave (PotS). Currently based on the 25th Anniversary app on macOS, or the GOG installer on Linux. The script can be used in 3 ways: by putting the app/installer in the same folder as the script, by giving the complete path when the script ask for it, or by launching the script as <code>shardinstall-pots.sh /path/to/installer.exe</code>.<br/>
 The script will also download Drizzle and put in <code>$HOME/bin</code>. If Drizzle prints an alert saying it can't find the Uru folder, try closing and relaunching it.
+
+<b>wrapper installers</b>: scripts included in some of my Alcugs <a href="https://www.mediafire.com/folder/dpf6adk3246qy/Wrappers">wrappers</a>; they only work in conjunction with their relative wrapper.
